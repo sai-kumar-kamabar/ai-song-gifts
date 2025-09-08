@@ -32,17 +32,17 @@ const packages = [
 
 const samples = [
   {
-    title: "Anniversary Love Song (Hindi)",
+    title: "Love story",
     type: "audio",
-    src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", // 🔁 replace
+    src: "https://res.cloudinary.com/dm7jagjg6/video/upload/v1757337265/potty_song_1_nzgr4c.mp3", // 🔁 replace
   },
   {
-    title: "Birthday Surprise (Telugu)",
+    title: "Name proposal",
     type: "audio",
-    src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3", // 🔁 replace
+    src: "https://res.cloudinary.com/dm7jagjg6/video/upload/v1757337305/s_song_1-_AudioTrimmer.com_t6sgcd.mp3", // 🔁 replace
   },
   {
-    title: "Parents Tribute Video (English)",
+    title: "Parents Tribute Video",
     type: "video",
     src: "https://samplelib.com/lib/preview/mp4/sample-5s.mp4", // 🔁 replace
   },
@@ -51,11 +51,11 @@ const samples = [
 export default function Portfolio() {
   const [active, setActive] = useState("audio");
 
-  const whatsappLink = "https://wa.me/0000000000?text=Hi%20I%20want%20a%20personalized%20song"; // 🔁 replace
-  const orderForm = "https://forms.gle/your-google-form"; // 🔁 replace
+  const whatsappLink = "https://wa.me/8897005988?text=Hi%20I%20want%20a%20personalized%20song"; // 🔁 replace
+  const orderForm = "https://docs.google.com/forms/d/e/1FAIpQLSd29HcZm6nsW7-Na3wZTZmX7O-7RXfgpvy5OmgRNQ9ur7B2UQ/viewform?usp=dialog"; // 🔁 replace
   const instagram = "https://instagram.com/yourhandle"; // 🔁 replace
   const youtube = "https://youtube.com/@yourchannel"; // 🔁 replace
-  const mailto = "mailto:youremail@example.com"; // 🔁 replace
+  const mailto = "saisk58593@gmail.com"; // 🔁 replace
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-rose-50 via-white to-rose-50 text-gray-900">
@@ -63,7 +63,7 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Music4 className="w-6 h-6 text-rose-500"/>
-            <span className="font-semibold">AI Song Gifts</span>
+            <span className="font-semibold">Half Ticket Memories</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#samples" className="hover:text-rose-600">Samples</a>
@@ -91,7 +91,7 @@ export default function Portfolio() {
               <a href="#samples" className="rounded-2xl bg-white border px-5 py-3 hover:border-rose-300">Listen Samples</a>
             </div>
             <div className="mt-4 flex items-center gap-3 text-sm text-gray-500">
-              <CheckCircle2 className="w-4 h-4 text-emerald-500"/> 48–96h Delivery
+              <CheckCircle2 className="w-4 h-4 text-emerald-500"/> 24–48h Delivery
               <CheckCircle2 className="w-4 h-4 text-emerald-500"/> Names & story included
               <CheckCircle2 className="w-4 h-4 text-emerald-500"/> Revisions available
             </div>
