@@ -10,34 +10,34 @@ const packages = [
   {
     name: "Basic",
     price: 799,
-    desc: "1–1.5 min custom song, AI lyrics + music, Audio (MP3)",
-    features: ["Personalized names & story", "Audio-only (MP3)", "Delivery: 2–3 days"],
+    desc: "Personalized lyrics + music, Audio (MP3)",
+    features: ["Personalized Names & Story", "Audio-only (MP3)", "Delivery: 24-48 hours"],
     highlight: false,
   },
   {
     name: "Standard",
-    price: 1499,
-    desc: "2–3 min song, AI lyrics + music + polish, Audio + Simple Video",
-    features: ["Images + on-screen lyrics", "1 revision included", "Delivery: 3–4 days"],
+    price: 1999,
+    desc: "Personalized lyrics + music + polish, Audio + Image Video",
+    features: ["Personalized Names & Story", "Images + on-screen lyrics", "Delivery: 2–3 days"],
     highlight: true,
   },
   {
     name: "Premium",
-    price: 2499,
-    desc: "3–4 min cinematic song, extra manual editing, Custom Video",
-    features: ["High‑quality visuals/animations", "Preview before final", "Delivery: 4–5 days"],
+    price: 4499,
+    desc: "Personalized cinematic song, extra manual editing, Custom Video",
+    features: ["Personalized Names & Story","High‑quality video editing", "Delivery: 4–5 days"],
     highlight: false,
   },
 ];
 
 const samples = [
   {
-    title: "Love story",
+    title: "Personalized Love Story - lyrical audio",
     type: "audio",
     src: "https://res.cloudinary.com/dm7jagjg6/video/upload/v1757337265/potty_song_1_nzgr4c.mp3", // 🔁 replace
   },
   {
-    title: "Name proposal",
+    title: "Personalized Name proposal",
     type: "audio",
     src: "https://res.cloudinary.com/dm7jagjg6/video/upload/v1757337305/s_song_1-_AudioTrimmer.com_t6sgcd.mp3", // 🔁 replace
   },
@@ -51,11 +51,11 @@ const samples = [
 export default function Portfolio() {
   const [active, setActive] = useState("audio");
 
-  const whatsappLink = "https://wa.me/8897005988?text=Hi%20I%20want%20a%20personalized%20song"; // 🔁 replace
+  const whatsappLink = "https://wa.me/+918897005988?text=Hi%20I%20want%20a%20personalized%20song"; // 🔁 replace
   const orderForm = "https://docs.google.com/forms/d/e/1FAIpQLSd29HcZm6nsW7-Na3wZTZmX7O-7RXfgpvy5OmgRNQ9ur7B2UQ/viewform?usp=dialog"; // 🔁 replace
-  const instagram = "https://instagram.com/yourhandle"; // 🔁 replace
-  const youtube = "https://youtube.com/@yourchannel"; // 🔁 replace
-  const mailto = "saisk58593@gmail.com"; // 🔁 replace
+  const instagram = "https://www.instagram.com/half_ticket_memories/"; // 🔁 replace
+  const youtube = "http://www.youtube.com/@halfticketmemories"; // 🔁 replace
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-rose-50 via-white to-rose-50 text-gray-900">
@@ -166,7 +166,7 @@ export default function Portfolio() {
               </div>
             ))}
           </div>
-          <div className="text-center text-sm text-gray-600 mt-4">Add‑ons: Extra language +₹500 · Express 24h +₹700 · Printed lyrics PDF +₹300</div>
+          
         </div>
       </section>
 
@@ -219,10 +219,10 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white">
+      <footer className="bg-black/5">
         <div className="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-6">
           <div>
-            <div className="flex items-center gap-2 font-semibold"><Music4 className="w-5 h-5 text-rose-500"/>AI Song Gifts</div>
+            <div className="flex items-center gap-2 font-semibold"><Music4 className="w-5 h-5 text-rose-500"/>Half Ticket Memories</div>
             <p className="text-sm text-gray-600 mt-2">Original AI‑assisted songs & videos for your special moments. Made with love in India.</p>
           </div>
           <div>
@@ -241,11 +241,11 @@ export default function Portfolio() {
               <li className="flex items-center gap-2"><Phone className="w-4 h-4"/> <a className="hover:text-rose-600" href={whatsappLink} target="_blank" rel="noreferrer">WhatsApp</a></li>
               <li className="flex items-center gap-2"><Instagram className="w-4 h-4"/> <a className="hover:text-rose-600" href={instagram} target="_blank" rel="noreferrer">Instagram</a></li>
               <li className="flex items-center gap-2"><Youtube className="w-4 h-4"/> <a className="hover:text-rose-600" href={youtube} target="_blank" rel="noreferrer">YouTube</a></li>
-              <li className="flex items-center gap-2"><Mail className="w-4 h-4"/> <a className="hover:text-rose-600" href={mailto}>Email</a></li>
+              
             </ul>
           </div>
         </div>
-        <div className="text-xs text-center text-gray-500 pb-8">© {new Date().getFullYear()} AI Song Gifts · “All songs are AI‑assisted, original & for personal gifting. Commercial use requires license.”</div>
+        <div className="text-xs text-center text-gray-500 pb-8">© {new Date().getFullYear()} Half Ticket Memories · “All songs are AI‑assisted, original & for personal gifting. Commercial use requires license.”</div>
       </footer>
     </div>
   );
