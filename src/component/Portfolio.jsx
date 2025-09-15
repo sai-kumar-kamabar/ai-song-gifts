@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Music4, Heart, Gift, Headphones, Sparkles, Phone, Instagram, Youtube, Mail, CheckCircle2, IndianRupee } from "lucide-react";
 
@@ -48,6 +49,30 @@ const samples = [
   },
 ];
 
+
+const services = [
+  {
+    icon: <Heart className="w-6 h-6 text-rose-500"/>,
+    title: "Personalized Songs",
+    description: "Custom lyrics and melodies created just for you, capturing your unique story and emotions.",
+  },
+  {
+    icon: <Music4 className="w-6 h-6 text-rose-500"/>,
+    title: "Lyric Videos",
+    description: "Beautifully animated videos with on-screen lyrics to accompany your personalized songs.",
+  },
+  {
+    icon: <Gift className="w-6 h-6 text-rose-500"/>,
+    title: "Special Occasion Packages",
+    description: "Packages tailored for anniversaries, birthdays, proposals, pre-weddings and more. Choose what fits your moment.",
+  },
+  {
+    icon: <Sparkles className="w-6 h-6 text-rose-500"/>,
+    title: "Fast Delivery & Revisions",
+    description: "Quick turnaround times with options for minor edits to ensure you get exactly what you want.",
+  },
+];
+
 export default function Portfolio() {
   const [active, setActive] = useState("audio");
 
@@ -56,9 +81,44 @@ export default function Portfolio() {
   const instagram = "https://www.instagram.com/half_ticket_memories/"; // 🔁 replace
   const youtube = "http://www.youtube.com/@halfticketmemories"; // 🔁 replace
   
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Half Ticket Memories",
+    "url": "https://ai-song-gifts.vercel.app/",
+    "description": "Original AI‑assisted personalized songs & videos for special occasions.",
+    "sameAs": [
+      "https://www.instagram.com/half_ticket_memories/",
+      "http://www.youtube.com/@halfticketmemories"
+    ]
+  };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-rose-50 via-white to-rose-50 text-gray-900">
+      
+      <Helmet>
+        {/* Dynamic Meta Tags */}
+        <title>Custom Songs & Videos | Half Ticket Memories</title>
+        <meta name="description" content="Get a unique personalized song or video for any occasion: birthday, anniversary, proposal, pre-wedding shoot, marriage, baby birth celebrations and more. Indian languages & international styles available. Order in minutes!" />
+        <link rel="canonical" href="https://ai-song-gifts.vercel.app/" />
+        {/* Open Graph tags */}
+        <meta property="og:title" content="Custom Songs & Videos | Half Ticket Memories" />
+        <meta property="og:description" content="Original, AI-assisted personalized music gifts for your loved ones, delivered as audio or custom video." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ai-song-gifts.vercel.app/" />
+        {/* Twitter tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Custom Songs & Videos | Half Ticket Memories" />
+        <meta name="twitter:description" content="Personalized songs and lyric videos for memorable gifting. Listen to samples and order online." />
+        {/* Structured Data / Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(schemaData)}
+        </script>
+      </Helmet>
+
+      {/* Header */}
+      
       <header className="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-rose-100">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -67,6 +127,7 @@ export default function Portfolio() {
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#samples" className="hover:text-rose-600">Samples</a>
+            <a href="#services" className="hover:text-rose-600">Services</a>
             <a href="#packages" className="hover:text-rose-600">Packages</a>
             <a href="#how" className="hover:text-rose-600">How it works</a>
             <a href="#faq" className="hover:text-rose-600">FAQ</a>
@@ -144,6 +205,21 @@ export default function Portfolio() {
         <p className="text-sm text-gray-500 mt-4">Want a free 30‑sec demo with your names? <a href={whatsappLink} target="_blank" rel="noreferrer" className="text-rose-600 underline">Chat on WhatsApp</a>.</p>
       </section>
 
+      {/* Services */}
+      <section id="services" className="max-w-6xl mx-auto px-4 py-16 bg-white/90 rounded-3xl shadow-sm">
+      <h2 className="text-3xl font-bold text-center mb-10">Our Services</h2>
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {services.map((service, idx) => (
+          <div key={idx} className="flex flex-col items-center text-center p-6 border border-rose-200 rounded-xl hover:shadow-lg transition-shadow duration-300">
+            {service.icon}
+            <h3 className="mt-4 text-xl font-semibold">{service.title}</h3>
+            <p className="mt-2 text-gray-600">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+
       {/* Packages */}
       <section id="packages" className="bg-white/70 border-y">
         <div className="max-w-6xl mx-auto px-4 py-16">
@@ -171,7 +247,7 @@ export default function Portfolio() {
       </section>
 
       {/* How it Works */}
-      <section id="how" className="max-w-6xl mx-auto px-4 py-16">
+      <section id="how" className="max-w-6xl mx-auto px-4 py-16 ">
         <h2 className="text-2xl md:text-3xl font-bold text-center">How It Works</h2>
         <div className="grid md:grid-cols-4 gap-4 mt-8">
           {[
