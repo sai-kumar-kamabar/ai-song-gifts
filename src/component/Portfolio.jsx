@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Music4, Heart, Gift, Headphones, Sparkles, Phone, Instagram, Youtube, Mail, CheckCircle2, IndianRupee } from "lucide-react";
 
+
 // 🔧 QUICK SETUP NOTES
 // 1) Replace all PLACEHOLDER links below (sample MP3/MP4, WhatsApp, Google Form, social links)
 // 2) Deploy steps provided in chat (Vercel/Netlify). This is a single React component export.
@@ -72,6 +73,21 @@ const services = [
     description: "Quick turnaround times with options for minor edits to ensure you get exactly what you want.",
   },
 ];
+
+const reviews = [
+  { name: "Keerthy", text: "I cried happy tears after hearing my song gift 💖", stars: 5 },
+  { name: "Ravi", text: "Best surprise ever, super unique idea!", stars: 5 },
+  
+  { name: "Ramesh & Priya", text: "For our 5th anniversary, I gifted my wife a personalized AI song. When the melody played with our love story as lyrics, she cried happy tears. Best surprise ever!", stars: 5 },
+  { name: "Sneha & Kiran", text: "We welcomed our baby girl last month. The AI song captured our emotions so beautifully, like a lullaby with our journey. It will always be our baby's first gift.", stars: 4 },
+  { name: "Rahul", text: "I used Half Ticket Memories to create a song for my proposal. When the music played, I went down on one knee — she said YES with tears in her eyes! Thank you for making my moment unforgettable.", stars: 4 },
+  { name: "Anjali & Vivek", text: "For our pre-wedding shoot, we added our AI song in the background video. Friends and family keep asking who composed it. It felt like a movie made only for us.", stars: 4 },
+  { name: "Yamuna", text: "My brother gave me a birthday song with my childhood memories in it. It was funny, emotional, and heart-touching at the same time. Way better than any material gift!", stars: 4 },
+
+
+];
+
+
 
 export default function Portfolio() {
   const [active, setActive] = useState("audio");
@@ -266,6 +282,7 @@ export default function Portfolio() {
           <a href={orderForm} target="_blank" rel="noreferrer" className="rounded-2xl bg-rose-600 text-white px-6 py-3 hover:bg-rose-700">Start Your Song</a>
         </div>
       </section>
+      
 
       {/* FAQ */}
       <section id="faq" className="bg-white/70 border-t">
@@ -293,6 +310,28 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+
+{/* Reviews */}
+      <section className="bg-gray-900 text-white py-12">
+      <h2 className="text-3xl font-bold text-center mb-8">What People Say</h2>
+      <div className="overflow-hidden relative w-full">
+        <motion.div
+          className="flex gap-6"
+          animate={{ x: ["0%", "-100%"] }}
+          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+        >
+          {[...reviews, ...reviews].map((review, index) => (
+            <div key={index} className="min-w-[300px] bg-gray-800 p-6 rounded-2xl shadow-lg">
+              <p className="italic mb-4">"{review.text}"</p>
+              <div className="flex items-center justify-between">
+                <span className="font-semibold">{review.name}</span>
+                <span>{"⭐".repeat(review.stars)}</span>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
 
       {/* Footer */}
       <footer className="bg-black/5">
