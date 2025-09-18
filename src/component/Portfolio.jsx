@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Analytics } from "@vercel/analytics/react"
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Music4, Heart, Gift, Headphones, Sparkles, Phone, Instagram, Youtube, Mail, CheckCircle2, IndianRupee } from "lucide-react";
@@ -385,6 +386,7 @@ export default function Portfolio() {
         </div>
         <div className="text-xs text-center text-gray-500 pb-8">© {new Date().getFullYear()} Half Ticket Memories · “All songs are AI‑assisted, original & for personal gifting. Commercial use requires license.”</div>
       </footer>
+      <Analytics />
     </div>
   );
 }
