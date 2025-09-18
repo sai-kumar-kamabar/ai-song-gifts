@@ -75,14 +75,14 @@ const services = [
 ];
 
 const reviews = [
-  { name: "Keerthy", text: "I cried happy tears after hearing my song gift 💖", stars: 5 },
+  { name: "Keerthy", text: "I cried happy tears after hearing my named song gift 💖", stars: 5 },
   { name: "Ravi", text: "Best surprise ever, super unique idea!", stars: 5 },
-  
-  { name: "Ramesh & Priya", text: "For our 5th anniversary, I gifted my wife a personalized AI song. When the melody played with our love story as lyrics, she cried happy tears. Best surprise ever!", stars: 5 },
-  { name: "Sneha & Kiran", text: "We welcomed our baby girl last month. The AI song captured our emotions so beautifully, like a lullaby with our journey. It will always be our baby's first gift.", stars: 4 },
-  { name: "Rahul", text: "I used Half Ticket Memories to create a song for my proposal. When the music played, I went down on one knee — she said YES with tears in her eyes! Thank you for making my moment unforgettable.", stars: 4 },
+  { name: "kiran & mounika", text: "For our 5th anniversary, I gifted my wife a personalized AI song. When the melody played with our love story as lyrics, she cried happy tears. Best surprise ever!", stars: 5 },
+  { name: "Srujana", text: "Affordable and heart-touching gift ✨", stars: 4 },
+  { name: "Sneha & Mahesh", text: "We welcomed our baby girl last month. The AI song captured our emotions so beautifully, like a lullaby with our journey. It will always be our baby's first gift.", stars: 4 },
+  { name: "Rahul", text: "I used Half Ticket Memories to create a song for my proposal. When the music played, I went down on one knee — she said YES with tears in her eyes! Thank you for making my moment unforgettable.", stars: 5 },
   { name: "Anjali & Vivek", text: "For our pre-wedding shoot, we added our AI song in the background video. Friends and family keep asking who composed it. It felt like a movie made only for us.", stars: 4 },
-  { name: "Yamuna", text: "My brother gave me a birthday song with my childhood memories in it. It was funny, emotional, and heart-touching at the same time. Way better than any material gift!", stars: 4 },
+  { name: "Bhuvana", text: "My brother gave me a birthday song with my childhood memories in it. It was funny, emotional, and heart-touching at the same time. Way better than any material gift!", stars: 5 },
 
 
 ];
@@ -302,7 +302,7 @@ export default function Portfolio() {
               q:"Refunds & revisions?",
               a:"Digital products aren’t refundable after delivery, but we include minor edits to get it right.",
             }].map((f,i)=> (
-              <div key={i} className="rounded-3xl border bg-white p-5 shadow-sm">
+              <div key={i} className="rounded-3xl border bg-white p-5 shadow-sm ">
                 <div className="font-semibold">{f.q}</div>
                 <p className="text-sm text-gray-600 mt-2">{f.a}</p>
               </div>
@@ -311,27 +311,50 @@ export default function Portfolio() {
         </div>
       </section>
 
-{/* Reviews */}
-      <section className="bg-gray-900 text-white py-12">
-      <h2 className="text-3xl font-bold text-center mb-8">What People Say</h2>
-      <div className="overflow-hidden relative w-full">
-        <motion.div
-          className="flex gap-6"
-          animate={{ x: ["0%", "-100%"] }}
-          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+
+      {/* Reviews */}
+<section className="bg-gray-900 text-white py-12">
+  <h2 className="text-3xl font-bold text-center mb-8">What People Say</h2>
+
+  {/* Desktop: Auto-scrolling marquee */}
+  <div className="hidden md:block overflow-hidden relative w-full">
+    <motion.div
+      className="flex gap-6"
+      animate={{ x: ["0%", "-100%"] }}
+      transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+    >
+      {[...reviews, ...reviews].map((review, index) => (
+        <div
+          key={index}
+          className="min-w-[300px] bg-gray-800 p-6 rounded-2xl shadow-lg"
         >
-          {[...reviews, ...reviews].map((review, index) => (
-            <div key={index} className="min-w-[300px] bg-gray-800 p-6 rounded-2xl shadow-lg">
-              <p className="italic mb-4">"{review.text}"</p>
-              <div className="flex items-center justify-between">
-                <span className="font-semibold">{review.name}</span>
-                <span>{"⭐".repeat(review.stars)}</span>
-              </div>
-            </div>
-          ))}
-        </motion.div>
+          <p className="italic mb-4 text-sm md:text-base">"{review.text}"</p>
+          <div className="flex items-center justify-between text-sm md:text-base">
+            <span className="font-semibold">{review.name}</span>
+            <span>{"⭐".repeat(review.stars)}</span>
+          </div>
+        </div>
+      ))}
+    </motion.div>
+  </div>
+
+  {/* Mobile: Swipeable scroll */}
+  <div className="md:hidden flex gap-4 overflow-x-auto px-4 scrollbar-hide">
+  {reviews.map((review, index) => (
+    <div
+      key={index}
+      className="w-[260px] bg-gray-800 p-4 rounded-xl shadow-md flex-shrink-0"
+    >
+      <p className="italic mb-3 text-sm line-clamp-6">"{review.text}"</p>
+      <div className="flex items-center justify-between text-xs">
+        <span className="font-semibold">{review.name}</span>
+        <span>{"⭐".repeat(review.stars)}</span>
       </div>
-    </section>
+    </div>
+  ))}
+</div>
+</section>
+
 
       {/* Footer */}
       <footer className="bg-black/5">
