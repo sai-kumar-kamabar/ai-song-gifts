@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Music4, Heart, Gift, Headphones, Sparkles, Phone, Instagram, Youtube, Mail, CheckCircle2, IndianRupee } from "lucide-react";
