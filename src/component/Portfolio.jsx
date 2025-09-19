@@ -5,28 +5,25 @@ import { motion } from "framer-motion";
 import { Music4, Heart, Gift, Headphones, Sparkles, Phone, Instagram, Youtube, Mail, CheckCircle2, IndianRupee } from "lucide-react";
 
 
-// 🔧 QUICK SETUP NOTES
-// 1) Replace all PLACEHOLDER links below (sample MP3/MP4, WhatsApp, Google Form, social links)
-// 2) Deploy steps provided in chat (Vercel/Netlify). This is a single React component export.
 
 const packages = [
   {
     name: "Basic",
-    price: 799,
+    price: 499,
     desc: "Personalized lyrics + music, Audio (MP3)",
     features: ["Personalized Names & Story", "Audio-only (MP3)", "Delivery: 24-48 hours"],
     highlight: false,
   },
   {
     name: "Standard",
-    price: 1999,
+    price: 1499,
     desc: "Personalized lyrics + music + polish, Audio + Image Video",
     features: ["Personalized Names & Story", "Images + on-screen lyrics", "Delivery: 2–3 days"],
     highlight: true,
   },
   {
     name: "Premium",
-    price: 4499,
+    price: 2999,
     desc: "Personalized cinematic song, extra manual editing, Custom Video",
     features: ["Personalized Names & Story","High‑quality video editing", "Delivery: 4–5 days"],
     highlight: false,
@@ -37,18 +34,19 @@ const samples = [
   {
     title: "Personalized Love Story - lyrical audio",
     type: "audio",
-    src: "https://res.cloudinary.com/dm7jagjg6/video/upload/v1757337265/potty_song_1_nzgr4c.mp3", // 🔁 replace
+    src: "https://res.cloudinary.com/dm7jagjg6/video/upload/v1757337265/potty_song_1_nzgr4c.mp3", 
   },
   {
     title: "Personalized Name proposal",
     type: "audio",
-    src: "https://res.cloudinary.com/dm7jagjg6/video/upload/v1757337305/s_song_1-_AudioTrimmer.com_t6sgcd.mp3", // 🔁 replace
+    src: "https://res.cloudinary.com/dm7jagjg6/video/upload/v1757337305/s_song_1-_AudioTrimmer.com_t6sgcd.mp3", 
   },
   {
-    title: "Parents Tribute Video",
-    type: "video",
-    src: "https://samplelib.com/lib/preview/mp4/sample-5s.mp4", // 🔁 replace
+    title: "Love Story - lyrical video",
+    type: "youtube",
+    src: "https://www.youtube.com/embed/vwTXwhINx4E?si=BYWvoRXUaiMoroEd", 
   },
+
 ];
 
 
@@ -93,10 +91,10 @@ const reviews = [
 export default function Portfolio() {
   const [active, setActive] = useState("audio");
 
-  const whatsappLink = "https://wa.me/+918897005988?text=Hi%20I%20want%20a%20personalized%20song"; // 🔁 replace
-  const orderForm = "https://docs.google.com/forms/d/e/1FAIpQLSd29HcZm6nsW7-Na3wZTZmX7O-7RXfgpvy5OmgRNQ9ur7B2UQ/viewform?usp=dialog"; // 🔁 replace
-  const instagram = "https://www.instagram.com/half_ticket_memories/"; // 🔁 replace
-  const youtube = "http://www.youtube.com/@halfticketmemories"; // 🔁 replace
+  const whatsappLink = "https://wa.me/+918897005988?text=Hi%20I%20want%20a%20personalized%20song"; 
+  const orderForm = "https://docs.google.com/forms/d/e/1FAIpQLSd29HcZm6nsW7-Na3wZTZmX7O-7RXfgpvy5OmgRNQ9ur7B2UQ/viewform?usp=dialog"; 
+  const instagram = "https://www.instagram.com/half_ticket_memories/"; 
+  const youtube = "http://www.youtube.com/@halfticketmemories"; 
   
   const schemaData = {
     "@context": "https://schema.org",
@@ -163,7 +161,7 @@ export default function Portfolio() {
               Turn Your <span className="text-rose-600">Memories</span> into a
               <br/> Custom <span className="text-rose-600">Song & Video</span>
             </h1>
-            <p className="mt-4 text-gray-600">Personalized songs for anniversaries, birthdays, proposals, parents & friends. Multi‑language, any style. Delivered as audio or a beautiful lyric video.</p>
+            <p className="mt-4 text-gray-600">Personalized songs for anniversaries, birthdays, proposals, parents & friends, pre-weddings, Events, employees appreciation. Multi‑language, any style. Delivered as audio or a beautiful lyric video.</p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <a href={orderForm} target="_blank" rel="noreferrer" className="rounded-2xl bg-rose-600 text-white px-5 py-3 shadow hover:bg-rose-700">Order Now</a>
               <a href="#samples" className="rounded-2xl bg-white border px-5 py-3 hover:border-rose-300">Listen Samples</a>
@@ -200,21 +198,39 @@ export default function Portfolio() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {samples.filter(s => s.type===active).map((s, idx) => (
+          {samples
+  .filter(s => active === "audio" ? s.type === "audio" : s.type === "video" || s.type === "youtube")
+  .map((s, idx) => (
             <motion.div key={idx} initial={{opacity:0, y:10}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.4}} className="rounded-3xl border bg-white p-4 shadow-sm">
               <div className="flex items-center gap-2 mb-3">
                 <Headphones className="w-4 h-4 text-rose-500"/>
                 <span className="font-medium">{s.title}</span>
               </div>
-              {s.type === "audio" ? (
-                <audio controls className="w-full">
-                  <source src={s.src} type="audio/mpeg"/>
-                </audio>
-              ) : (
-                <video controls className="w-full rounded-xl">
-                  <source src={s.src} type="video/mp4"/>
-                </video>
-              )}
+                      {s.type === "audio" && (
+          <audio controls className="w-full">
+            <source src={s.src} type="audio/mpeg"/>
+          </audio>
+        )}
+
+        {s.type === "video" && (
+          <video controls className="w-full rounded-xl">
+            <source src={s.src} type="video/mp4"/>
+          </video>
+        )}
+
+        {s.type === "youtube" && (
+          <div className="aspect-video">
+            <iframe
+              src={s.src}
+              title={s.title}
+              className="w-full h-full rounded-xl"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        )}
+
             </motion.div>
           ))}
         </div>
