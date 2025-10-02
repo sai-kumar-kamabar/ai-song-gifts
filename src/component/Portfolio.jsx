@@ -76,7 +76,7 @@ const services = [
 const reviews = [
   { name: "Keerthy", text: "I cried happy tears after hearing my named song gift 💖", stars: 5 },
   { name: "Ravi", text: "Best surprise ever, super unique idea!", stars: 5 },
-  { name: "kiran & mounika", text: "For our 5th anniversary, I gifted my wife a personalized AI song. When the melody played with our love story as lyrics, she cried happy tears. Best surprise ever!", stars: 5 },
+  { name: "Kiran & Mounika", text: "For our 5th anniversary, I gifted my wife a personalized AI song. When the melody played with our love story as lyrics, she cried happy tears. Best surprise ever!", stars: 5 },
   { name: "Srujana", text: "Affordable and heart-touching gift ✨", stars: 4 },
   { name: "Sneha & Mahesh", text: "We welcomed our baby girl last month. The AI song captured our emotions so beautifully, like a lullaby with our journey. It will always be our baby's first gift.", stars: 4 },
   { name: "Rahul", text: "I used Half Ticket Memories to create a song for my proposal. When the music played, I went down on one knee — she said YES with tears in her eyes! Thank you for making my moment unforgettable.", stars: 5 },
@@ -97,16 +97,73 @@ export default function Portfolio() {
   const youtube = "http://www.youtube.com/@halfticketmemories"; 
   
   const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Half Ticket Memories",
-    "url": "https://ai-song-gifts.vercel.app/",
-    "description": "Original AI‑assisted personalized songs & videos for special occasions.",
-    "sameAs": [
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Personalized Music Composition and Production",
+  "name": "Original Personalized Song and Video Gifts (AI-Assisted & Human-Crafted)",
+  "description": "Innovative, custom-written songs and professional lyric videos created from your personal memories. Our process combines human creativity and refinement with cutting-edge AI assistance to deliver truly unique, high-quality musical gifts, available globally.",
+  "sameAs": [
       "https://www.instagram.com/half_ticket_memories/",
       "http://www.youtube.com/@halfticketmemories"
+    ],
+  "isAccessibleForFree": "False",
+  "provider": {
+    "@type": "Organization",
+    "name": "Half Ticket Memories",
+    "url": "https://www.halfticketmemories.com/",
+    "logo": "https://res.cloudinary.com/dm7jagjg6/image/upload/v1759404568/Half_Ticket_Memories_Logo_Design_pvetjb.png" 
+  },
+  "areaServed": [
+    {
+      // Global Reach
+      "@type": "Place",
+      "name": "Worldwide" 
+    },
+    {
+      // National Focus
+      "@type": "Country",
+      "name": "India"
+    },
+    {
+      // State Focus
+      "@type": "State",
+      "name": "Telangana",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad" // City Focus
+      }
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Personalized Song Packages",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Basic Personalized Song Package",
+        "description": "Personalized lyrics + music, Audio (MP3)",
+        "price": "499",
+        "priceCurrency": "INR"
+      },
+      {
+        "@type": "Offer",
+        "name": "Standard Personalized Song & Image Video Package",
+        "description": "Personalized lyrics + music + polish, Audio + Image Video",
+        "price": "1499",
+        "priceCurrency": "INR"
+      },
+      {
+        "@type": "Offer",
+        "name": "Premium Cinematic Song & Custom Video Package",
+        "description": "Personalized cinematic song, extra manual editing, Custom Video",
+        "price": "2999",
+        "priceCurrency": "INR"
+      }
     ]
-  };
+  }
+};
+
+
 
 
   return (
@@ -115,13 +172,13 @@ export default function Portfolio() {
       <Helmet>
         {/* Dynamic Meta Tags */}
         <title>Custom Songs & Videos | Half Ticket Memories</title>
-        <meta name="description" content="Get a unique personalized song or video for any occasion: birthday, anniversary, proposal, pre-wedding shoot, marriage, baby birth celebrations and more. Indian languages & international styles available. Order in minutes!" />
-        <link rel="canonical" href="https://ai-song-gifts.vercel.app/" />
+        <meta name="description" content="Get a unique personalized song or video for any occasion: birthday, anniversary, proposal, pre-wedding shoot, marriage, baby birth, gift idea celebrations and more. Indian languages & international styles available. Order in minutes!" />
+        <link rel="canonical" href="https://www.halfticketmemories.com/" />
         {/* Open Graph tags */}
-        <meta property="og:title" content="Custom Songs & Videos | Half Ticket Memories" />
+        <meta property="og:title" content="Half Ticket Memories | Half Ticket Gifts" />
         <meta property="og:description" content="Original, AI-assisted personalized music gifts for your loved ones, delivered as audio or custom video." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ai-song-gifts.vercel.app/" />
+        <meta property="og:url" content="https://www.halfticketmemories.com/" />
         {/* Twitter tags */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Custom Songs & Videos | Half Ticket Memories" />
