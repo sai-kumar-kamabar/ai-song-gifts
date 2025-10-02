@@ -171,9 +171,11 @@ export default function Portfolio() {
       
       <Helmet>
         {/* Dynamic Meta Tags */}
-        <title>Custom Songs & Videos | Half Ticket Memories</title>
+        <title>Half Ticket Memories - Personalized Song Gifts, Custom Music & Videos</title>
         <meta name="description" content="Get a unique personalized song or video for any occasion: birthday, anniversary, proposal, pre-wedding shoot, marriage, baby birth, gift idea celebrations and more. Indian languages & international styles available. Order in minutes!" />
         <link rel="canonical" href="https://www.halfticketmemories.com/" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         {/* Open Graph tags */}
         <meta property="og:title" content="Half Ticket Memories | Half Ticket Gifts" />
         <meta property="og:description" content="Original, AI-assisted personalized music gifts for your loved ones, delivered as audio or custom video." />
