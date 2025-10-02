@@ -174,8 +174,9 @@ export default function Portfolio() {
         <title>Half Ticket Memories - Personalized Song Gifts, Custom Music & Videos</title>
         <meta name="description" content="Get a unique personalized song or video for any occasion: birthday, anniversary, proposal, pre-wedding shoot, marriage, baby birth, gift idea celebrations and more. Indian languages & international styles available. Order in minutes!" />
         <link rel="canonical" href="https://www.halfticketmemories.com/" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/logo192.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="\logo192.png" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         {/* Open Graph tags */}
         <meta property="og:title" content="Half Ticket Memories | Half Ticket Gifts" />
         <meta property="og:description" content="Original, AI-assisted personalized music gifts for your loved ones, delivered as audio or custom video." />
