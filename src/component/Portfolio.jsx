@@ -182,6 +182,9 @@ export default function Portfolio() {
         <meta property="og:description" content="Original, AI-assisted personalized music gifts for your loved ones, delivered as audio or custom video." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.halfticketmemories.com/" />
+        <meta property="og:image" content="https://www.halfticketmemories.com/images/logo192.png" />
+        <meta name="twitter:image" content="https://www.halfticketmemories.com/images/logo192.png" />
+
         {/* Twitter tags */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Custom Songs & Videos | Half Ticket Memories" />
