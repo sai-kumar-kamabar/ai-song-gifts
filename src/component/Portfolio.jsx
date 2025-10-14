@@ -9,7 +9,7 @@ import { Music4, Heart, Gift, Headphones, Sparkles, Phone, Instagram, Youtube, M
 const packages = [
   {
     name: "Basic",
-    price: 499,
+    price: 399,
     desc: "Personalized lyrics + music, Audio (MP3)",
     features: ["Personalized Names & Story", "Audio-only (MP3)", "Delivery: 24-48 hours"],
     highlight: false,
@@ -37,9 +37,19 @@ const samples = [
     src: "https://res.cloudinary.com/dm7jagjg6/video/upload/v1757337265/potty_song_1_nzgr4c.mp3", 
   },
   {
-    title: "Personalized Name proposal",
+    title: "shared Memories - lyrical audio",
     type: "audio",
     src: "https://res.cloudinary.com/dm7jagjg6/video/upload/v1757337305/s_song_1-_AudioTrimmer.com_t6sgcd.mp3", 
+  },
+  {
+    title: "Personalized Name (Keerty)",
+    type: "audio",
+    src: "https://res.cloudinary.com/dm7jagjg6/video/upload/v1760456005/%E0%B0%95%E0%B1%80%E0%B0%B0%E0%B1%8D%E0%B0%A4%E0%B0%BF_%E0%B0%A8%E0%B1%80_%E0%B0%A8%E0%B0%B5%E0%B1%8D%E0%B0%B5%E0%B1%81_%E0%B0%9A%E0%B0%82%E0%B0%A6%E0%B0%AE%E0%B0%BE%E0%B0%AE%E0%B0%B2%E0%B0%BE_es9j3z.mp3", 
+  },
+  {
+    title: "custom Love Memories - lyrical audio",
+    type: "audio",
+    src: "https://res.cloudinary.com/dm7jagjg6/video/upload/v1760456282/kiran_mounika_eudwqz.mp3", 
   },
   {
     title: "Love Story - lyrical video",
@@ -209,6 +219,7 @@ export default function Portfolio() {
             <a href="#packages" className="hover:text-rose-600">Packages</a>
             <a href="#how" className="hover:text-rose-600">How it works</a>
             <a href="#faq" className="hover:text-rose-600">FAQ</a>
+            <a href="#rev" className="hover:text-rose-600">Reviews</a>
           </nav>
           <a href={whatsappLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-rose-600 text-white px-4 py-2 shadow-sm hover:bg-rose-700">
             <Phone className="w-4 h-4"/> WhatsApp Us
@@ -393,7 +404,7 @@ export default function Portfolio() {
 
 
       {/* Reviews */}
-<section className="bg-gray-900 text-white py-12">
+<section id="rev" className="bg-gray-900 text-white py-12">
   <h2 className="text-3xl font-bold text-center mb-8">What People Say</h2>
 
   {/* Desktop: Auto-scrolling marquee */}
