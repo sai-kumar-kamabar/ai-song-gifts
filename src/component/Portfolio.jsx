@@ -106,6 +106,21 @@ export default function Portfolio() {
   const instagram = "https://www.instagram.com/half_ticket_memories/"; 
   const youtube = "http://www.youtube.com/@halfticketmemories"; 
   
+  // GTM Container ID from the image is GTM-KVV4L924
+  const gtmId = 'GTM-KVV4L924';
+  
+  // The first GTM snippet (for <head>)
+  const gtmHeadScript = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','${gtmId}');`;
+
+  // The second GTM snippet (for <body>)
+  const gtmBodyNoscript = `<iframe src="https://www.googletagmanager.com/ns.html?id=${gtmId}"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>
+`;
+
   const schemaData = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -180,6 +195,11 @@ export default function Portfolio() {
     <div className="min-h-screen bg-gradient-to-b from-rose-50 via-white to-rose-50 text-gray-900">
       
       <Helmet>
+
+        <script>
+          {gtmHeadScript}
+        </script>
+
         {/* Dynamic Meta Tags */}
         <title>Half Ticket Memories - Personalized Song Gifts, Custom Music & Videos</title>
         <meta name="description" content="Get a unique personalized song or video for any occasion: birthday, anniversary, proposal, pre-wedding shoot, marriage, baby birth, gift idea celebrations and more. Indian languages & international styles available. Order in minutes!" />
@@ -203,8 +223,10 @@ export default function Portfolio() {
         <script type="application/ld+json">
           {JSON.stringify(schemaData)}
         </script>
-      </Helmet>
 
+        
+      </Helmet>
+      <div dangerouslySetInnerHTML={{ __html: gtmBodyNoscript }} />
       {/* Header */}
       
       <header className="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-rose-100">
