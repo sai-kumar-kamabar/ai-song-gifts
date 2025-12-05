@@ -9,21 +9,21 @@ import { Music4, Heart, Gift, Headphones, Sparkles, Phone, Instagram, Youtube, M
 const packages = [
   {
     name: "Basic",
-    price: 399,
+    price: null,
     desc: "Personalized lyrics + music, Audio (MP3)",
     features: ["Personalized Names & Story", "Audio-only (MP3)", "Delivery: 24-48 hours"],
     highlight: false,
   },
   {
     name: "Standard",
-    price: 1499,
+    price: null,
     desc: "Personalized lyrics + music + polish, Audio + Image Video",
     features: ["Personalized Names & Story", "Images + on-screen lyrics", "Delivery: 2–3 days"],
     highlight: true,
   },
   {
     name: "Premium",
-    price: 2999,
+    price: null,
     desc: "Personalized cinematic song, extra manual editing, Custom Video",
     features: ["Personalized Names & Story","High‑quality video editing", "Delivery: 4–5 days"],
     highlight: false,
