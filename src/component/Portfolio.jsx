@@ -9,21 +9,21 @@ import { Music4, Heart, Gift, Headphones, Sparkles, Phone, Instagram, Youtube, M
 const packages = [
   {
     name: "Basic",
-    price: null,
+    price: 499,
     desc: "Personalized lyrics + music, Audio (MP3)",
     features: ["Personalized Names & Story", "Audio-only (MP3)", "Delivery: 24-48 hours"],
     highlight: false,
   },
   {
     name: "Standard",
-    price: null,
+    price: 699,
     desc: "Personalized lyrics + music + polish, Audio + Image Video",
     features: ["Personalized Names & Story", "Images + on-screen lyrics", "Delivery: 2–3 days"],
     highlight: true,
   },
   {
     name: "Premium",
-    price: null,
+    price: 999,
     desc: "Personalized cinematic song, extra manual editing, Custom Video",
     features: ["Personalized Names & Story","High‑quality video editing", "Delivery: 4–5 days"],
     highlight: false,
@@ -252,34 +252,90 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-4 pt-12 pb-16">
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.6}}>
-            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-              Turn Your <span className="text-rose-600">Memories</span> into a
-              <br/> Custom <span className="text-rose-600">Song & Video</span>
-            </h1>
-            <p className="mt-4 text-gray-600">Personalized songs for anniversaries, birthdays, proposals, parents & friends, pre-weddings, Events, employees appreciation. Multi‑language, any style. Delivered as audio or a beautiful lyric video.</p>
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <a href={orderForm} target="_blank" rel="noreferrer" className="rounded-2xl bg-rose-600 text-white px-5 py-3 shadow hover:bg-rose-700">Order Now</a>
-              <a href="#samples" className="rounded-2xl bg-white border px-5 py-3 hover:border-rose-300">Listen Samples</a>
-            </div>
-            <div className="mt-4 flex items-center gap-3 text-sm text-gray-500">
-              <CheckCircle2 className="w-4 h-4 text-emerald-500"/> 24–48h Delivery
-              <CheckCircle2 className="w-4 h-4 text-emerald-500"/> Names & story included
-              <CheckCircle2 className="w-4 h-4 text-emerald-500"/> Revisions available
-            </div>
-          </motion.div>
-          <motion.div initial={{opacity:0, scale:0.96}} animate={{opacity:1, scale:1}} transition={{duration:0.6, delay:0.1}} className="relative">
-            <div className="aspect-video rounded-3xl bg-gradient-to-br from-rose-100 to-rose-200 shadow-inner flex items-center justify-center">
-              <div className="text-center p-6">
-                <Heart className="w-10 h-10 mx-auto text-rose-500"/>
-                <p className="font-semibold mt-2">A gift they’ll never forget</p>
-                <p className="text-sm text-gray-600 mt-1">Play a short demo below</p>
-              </div>
-            </div>
-            <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl shadow p-3 flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-rose-500"/> 100% Personalized
-            </div>
-          </motion.div>
+          <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+>
+  <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
+    Turn Your <span className="text-rose-600">Memories</span> into a
+    <br /> Custom <span className="text-rose-600">Song & Video</span>
+  </h1>
+
+  <p className="mt-4 text-gray-600">
+    Personalized songs for anniversaries, birthdays, proposals, parents & friends,
+    pre-weddings, events & more.
+  </p>
+
+  <div className="mt-6 flex flex-wrap items-center gap-3">
+    <a href={orderForm} target="_blank" rel="noreferrer"
+       className="rounded-2xl bg-rose-600 text-white px-5 py-3 shadow hover:bg-rose-700">
+      Order Now
+    </a>
+    <a href="#samples"
+       className="rounded-2xl bg-white border px-5 py-3 hover:border-rose-300">
+      Listen Samples
+    </a>
+  </div>
+
+  <div className="mt-4 flex items-center gap-3 text-sm text-gray-500">
+    <CheckCircle2 className="w-4 h-4 text-emerald-500"/> 24–48h Delivery
+    <CheckCircle2 className="w-4 h-4 text-emerald-500"/> Names & story included
+    <CheckCircle2 className="w-4 h-4 text-emerald-500"/> Revisions available
+  </div>
+</motion.div>
+
+<motion.div
+  initial={{ opacity: 0, scale: 0.96 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.6, delay: 0.1 }}
+  className="relative"
+>
+  <div className="aspect-video rounded-3xl bg-gradient-to-br from-rose-100 to-rose-200 shadow-inner flex items-center justify-center">
+    <div className="text-center p-6">
+      <Heart className="w-10 h-10 mx-auto text-rose-500"/>
+      <p className="font-semibold mt-2">A gift they’ll never forget</p>
+      <p className="text-sm text-gray-600 mt-1">Play a short demo below</p>
+    </div>
+  </div>
+
+  {/* Valentine Offer */}
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.6, duration: 0.6 }}
+    className="absolute top-1 left-1 bg-white rounded-2xl shadow-lg px-4 py-3 border border-rose-200 max-w-[240px]"
+  >
+    <motion.div
+      animate={{ scale: [1, 1.08, 1] }}
+      transition={{ repeat: Infinity, duration: 1.6 }}
+      className="flex items-center gap-2"
+    >
+      <Heart className="w-5 h-5 text-rose-600 fill-rose-500" />
+      <span className="font-semibold text-rose-700">
+        Valentine’s Special 💕
+      </span>
+    </motion.div>
+
+    <p className="text-sm text-gray-700 mt-2">
+      Flat <span className="font-bold text-rose-600">₹200 OFF</span> on all plans
+    </p>
+
+    <p className="text-xs text-gray-500 mt-1">
+      Valid till Feb 14
+    </p>
+
+    <a
+      href={orderForm}
+      target="_blank"
+      rel="noreferrer"
+      className="mt-3 inline-block w-full text-center rounded-xl bg-rose-600 text-white py-2 text-sm hover:bg-rose-700"
+    >
+      Create Your Love Song 💖
+    </a>
+  </motion.div>
+</motion.div>
+
         </div>
       </section>
 
