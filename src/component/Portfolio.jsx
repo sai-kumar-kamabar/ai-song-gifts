@@ -311,9 +311,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
       transition={{ repeat: Infinity, duration: 1.6 }}
       className="flex items-center gap-2"
     >
-      <Heart className="w-5 h-5 text-rose-600 fill-rose-500" />
+      <Heart className="w-6 h-5 text-rose-600 fill-rose-600" />
       <span className="font-semibold text-rose-700">
-        Valentine’s Special 💕
+        Special Offer 💕
       </span>
     </motion.div>
 
@@ -322,16 +322,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </p>
 
     <p className="text-xs text-gray-500 mt-1">
-      Valid till Feb 14
+      Valid till Apr 30
     </p>
 
     <a
       href={orderForm}
       target="_blank"
       rel="noreferrer"
-      className="mt-3 inline-block w-full text-center rounded-xl bg-rose-600 text-white py-2 text-sm hover:bg-rose-700"
+      className="mt-3 inline-block w-full text-center rounded-xl bg-rose-600 text-white py-3 text-sm hover:bg-rose-700"
     >
-      Create Your Love Song 💖
+      Create Your Custom Song 💖
     </a>
   </motion.div>
 </motion.div>
